@@ -1,0 +1,57 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1751906376
+enemy.gd::GDScript::-1::1751906007::0::1::::<>CharacterBody3D<>::
+export_presets.cfg::TextFile::-1::1751906007::0::1::::<><>::
+icon.svg::CompressedTexture2D::2081334262286896728::1751906007::1751906402::1::::<><>::
+README.md::TextFile::-1::1751904949::0::1::::<><>::
+score.gd::GDScript::-1::1751906009::0::1::::<>Node<>::
+SkyWizardsII.md::TextFile::-1::1751906003::0::1::::<><>::
+spawner.gd::GDScript::-1::1751906009::0::1::::<>Node3D<>::
+untitled.blend::PackedScene::5568450825406713279::1751906009::1751906456::1::::<><>::
+untitled.glb::PackedScene::1606420439787250772::1751906009::1751906412::1::::<><>::
+::res://enemy/::1751906007
+cauldron.tscn::PackedScene::8134254993963868381::1751906007::0::1::::<><>::uid://bsgmomdfvr8rk::::res://models/cauldron.glb
+enemy.tscn::PackedScene::4919030342091429625::1751906007::0::1::::<><>::res://enemy.gd<>uid://dn5j8x75asw26::::res://enemy/cauldron.tscn<>uid://bx2hibklblt2s::::res://enemy/red_wizard.tscn<>uid://dc2o6gi0ctoqb::::res://sounds/TIE Fighter roar.mp3<>uid://biqs1rjuetxbd::::res://sounds/blaster.mp3
+red_wizard.tscn::PackedScene::4056941660501039804::1751906007::0::1::::<><>::uid://2vpmt15hk21r::::res://models/red_wizard.glb
+spawner.tscn::PackedScene::2704500647084475176::1751906007::0::1::::<><>::res://spawner.gd
+::res://missile/::1751906007
+magic_missile.gd::GDScript::-1::1751906007::0::1::::<>Node3D<>::
+magic_missile.tscn::PackedScene::6479264173896339254::1751906007::0::1::::<><>::res://missile/magic_missile.gd
+::res://models/::1751906009
+cauldron.glb::PackedScene::3662960375900470792::1751906007::1751906633::1::::<><>::
+ground.glb::PackedScene::1239271211023224071::1751906007::1751906630::1::::<><>::
+magic_missile.glb::PackedScene::712716755980649494::1751906007::1751906630::1::::<><>::
+red_wizard.glb::PackedScene::1939383934961895153::1751906007::1751906630::1::::<><>::
+sofa.glb::PackedScene::390619793592314790::1751906007::1751906628::1::::<><>::
+terrain.glb::PackedScene::7144545076440135433::1751906008::1751906626::1::::<><>::
+untitled.blend::PackedScene::3220967585060874991::1751906009::1751906470::1::::<><>::
+wizard.glb::PackedScene::6847711444129072967::1751906009::1751906458::1::::<><>::
+::res://music/::1751906009
+Lighting Speed.mp3::AudioStreamMP3::4837186564529604085::1751906009::1751906402::1::::<><>::
+::res://player/::1751906009
+mouse_control.gd::GDScript::-1::1751906009::0::1::::<>Control<>::
+playerCharacter.tscn::PackedScene::1339244855024160800::1751906009::0::1::::<><>::res://player/player_character.gd<>uid://tylw3kqqll7j::::res://player/sofa.tscn<>res://player/player_collision.gd<>uid://ci77h1vtko0cj::::res://player/wizard.tscn<>res://player/mouse_control.gd<>res://player/player_life_bar.gd<>res://player/progress_bar.gd<>uid://dikcgufap1qsx::::res://sounds/wind.mp3<>uid://biqs1rjuetxbd::::res://sounds/blaster.mp3<>uid://ca6f0x6ww3vof::::res://music/Lighting Speed.mp3
+player_character.gd::GDScript::-1::1751906009::0::1::::<>CharacterBody3D<>::
+player_collision.gd::GDScript::-1::1751906009::0::1::::<>CollisionShape3D<>::
+player_controller.gd::GDScript::-1::1751906009::0::1::::<>Node<>::
+player_life_bar.gd::GDScript::-1::1751906009::0::1::::<>Node<>::
+progress_bar.gd::GDScript::-1::1751906009::0::1::::<>ProgressBar<>::
+sofa.tscn::PackedScene::1383841756457031245::1751906009::0::1::::<><>::uid://fthpljmi2i03::::res://models/sofa.glb
+wizard.tscn::PackedScene::5402369047871447265::1751906009::0::1::::<><>::uid://c4tc2o6gcr8md::::res://models/wizard.glb
+::res://shaders/::1751906009
+ground.gdshader::Shader::-1::1751906009::0::1::::<><>::
+::res://sounds/::1751906009
+blaster.mp3::AudioStreamMP3::2982101721088659609::1751906009::1751906402::1::::<><>::
+TIE Fighter roar.mp3::AudioStreamMP3::7356283663862622129::1751906009::1751906402::1::::<><>::
+wind.mp3::AudioStreamMP3::7741549784685233339::1751906009::1751906402::1::::<><>::
+::res://textures/::1751906009
+1abf3c39f7855fc9d0d3408c7cab6161.jpg::CompressedTexture2D::1513640517280037239::1751906009::1751906403::1::::<><>::
+kloppenheim_02_puresky_2k.exr::CompressedTexture2D::4579009815751240312::1751906009::1751906410::1::::<><>::
+Pupil.png::CompressedTexture2D::5927010433379791907::1751906009::1751906403::1::::<><>::
+::res://world/::1751906009
+arena.tscn::PackedScene::3684088060038253786::1751906009::0::1::::<><>::uid://rwku633xhnbj::::res://models/ground.glb
+kill_barrier.gd::GDScript::-1::1751906009::0::1::::<>Node3D<>::
+terrain.tscn::PackedScene::1388851132647796110::1751906009::0::1::::<><>::uid://c814u4kcgw3y0::::res://models/terrain.glb<>res://shaders/ground.gdshader
+world.gd::GDScript::-1::1751906009::0::1::::<>Node3D<>::
+world.tscn::PackedScene::1441420718313104353::1751906009::0::1::::<><>::res://world/world.gd<>uid://b6idvf2f67urw::::res://textures/kloppenheim_02_puresky_2k.exr<>uid://tc0fxfstldtg::::res://player/playerCharacter.tscn<>uid://bsqunli8dv1du::::res://world/arena.tscn<>res://world/kill_barrier.gd<>uid://ccc2yf8kjyi1v::::res://enemy/enemy.tscn<>uid://bescy3qs30fci::::res://enemy/spawner.tscn
+::res://world/enemy/::1730904928

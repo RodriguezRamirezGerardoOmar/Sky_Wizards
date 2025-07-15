@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca6f0x6ww3vof"
+path="res://.godot/imported/Lighting Speed.mp3-e45f6b0928c5f93d6f82abf6c3f25138.mp3str"
+
+[deps]
+
+source_file="res://music/Lighting Speed.mp3"
+dest_files=["res://.godot/imported/Lighting Speed.mp3-e45f6b0928c5f93d6f82abf6c3f25138.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=4 uid="uid://cykusfwt88x8a"]
+
+[ext_resource type="Script" path="res://missile/magic_missile.gd" id="1_680em"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_680em"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kdre"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0.734913, 0.0885206, 0.673531, 1)
+metallic = 0.821818
+roughness = 0.0709091
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ewuv1"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -2, 2, 2, 4),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AgABAAMAAQAFAAMAAAACAAMABQAAAAMAAQACAAQAAQAEAAUAAgAAAAQABAAAAAUA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("/3//f///AAD/f/9/AAAAAAAAAAD/fwAAAAD///9/AAD//wAA/38AAP//////fwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lcvpc"]
+resource_name = "magic_missile_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -2, 2, 2, 4),
+"attribute_data": PackedByteArray("/5//P/8f/z//X/8//5/////f/3//X/9//5//f/9f/7//H/9f/x//X/9f/9//X//f/9//X//f/1//n//f/5//3/9f/1//X/9f/1//X/9f/1//n/9f/5//X/+f/1//n/9f"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("CwAHAA8AEgACABYACAABABAAFAAAAAwABAAVAA0ABQAJABEABgATABcAAwAKAA4A"),
+"material": SubResource("StandardMaterial3D_8kdre"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/3//f///////f/9///8brf9//3///2jL/3//f///aMv/f/9/AAD///9//38AAOPS/3//fwAA9eD/f/9/AAD14AAAAAD/fxutAAAAAP9/49IAAAAA/39oywAAAAD/f/XgAAD///9///8AAP///3///wAA////f2jLAAD///9/9eD//wAA/38brf//AAD/f+PS//8AAP9/aMv//wAA/3/14P//////f/////////9//////////39oy///////f/Xg/3/jsAAA/39gI2Ajntye3P9/Gs8AAP9/5DDkMBrPGs8AAP9/AAD/f57cntwazxrP/3/jsP9/Gs+e3J7cGs8azwAA/38AAP9/YCNgI+Qw5DD/f+Ow/38az2AjYCPkMOQw")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ewuv1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_680em"]
+shading_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.660701, 0.376556, 0.678188, 1)
+metallic = 0.5
+billboard_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jeja7"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+inherit_velocity_ratio = 1.0
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+collision_mode = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_680em"]
+radius = 0.01
+height = 0.02
+
+[node name="magic_missile" type="RigidBody3D"]
+gravity_scale = 0.0
+script = ExtResource("1_680em")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.544537, 0, 0, 0, -2.38024e-08, -0.544537, 0, 0.544537, -2.38024e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_680em")
+
+[node name="Cube_001" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.245194, 0, 0, 0, 0.245194, 0, 0, 0, 0.245194, 0, 0, 0)
+mesh = SubResource("ArrayMesh_lcvpc")
+skeleton = NodePath("")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.526713)
+light_color = Color(0.340232, 0.368352, 0.953545, 1)
+light_energy = 5.0
+omni_range = 10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.556447)
+light_color = Color(0.340232, 0.368352, 0.953545, 1)
+light_energy = 5.0
+omni_range = 10.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0649414)
+material_override = SubResource("StandardMaterial3D_680em")
+speed_scale = 0.1
+explosiveness = 0.1
+randomness = 0.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_jeja7")
+draw_pass_1 = SubResource("SphereMesh_680em")
+
+[node name="missile_marker" type="Node" parent="."]
+metadata/type = "Missile"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,11 @@
+res://enemy/cauldron.tscn::49ab8696cfad5fa597b536ce4f315e54::1730904958::res://.godot/exported/133200997/export-7518f02e760fe684a1a3d9f4895b56fc-cauldron.scn
+res://enemy/enemy.tscn::c0513efb410b9e4a7e53bce8efc34b79::1730950977::res://.godot/exported/133200997/export-7a7ef7eb2aa2d13d5f77526465e49dfc-enemy.scn
+res://enemy/red_wizard.tscn::edf09e8705438350d0dc282b8dc022b5::1730904943::res://.godot/exported/133200997/export-8ae2b7a330265b8416338a3e2ce8416e-red_wizard.scn
+res://enemy/spawner.tscn::aac33bfb0a4671045d9e67c34484f2a6::1730950977::res://.godot/exported/133200997/export-ff0650f3958fbaf270ba62006e0e023d-spawner.scn
+res://missile/magic_missile.tscn::706164c3b31e99fa02d47119f67a4107::1730950977::res://.godot/exported/133200997/export-ca1a9c8dd04f60c1c2fcba801648448b-magic_missile.scn
+res://player/playerCharacter.tscn::b90bdb36f5febf2402b76b2474857b47::1730950977::res://.godot/exported/133200997/export-bf4bf9e3425d85321f4a8ebf1ba1b63d-playerCharacter.scn
+res://player/sofa.tscn::dac12887363cac326e01710337bb3220::1730818511::res://.godot/exported/133200997/export-06ce325c0d5a46c54990225b06e05e2e-sofa.scn
+res://player/wizard.tscn::b1e1cabdb957b9f3f1d3405ae1f5229f::1730818510::res://.godot/exported/133200997/export-4318df7e92e3c5b139af92ba7f7cfd32-wizard.scn
+res://world/arena.tscn::b233ffe41f2dfe47661a2c1b0b1f7588::1730950977::res://.godot/exported/133200997/export-24f43191201cf8d5cb632c71268c407c-arena.scn
+res://world/terrain.tscn::8ba17df2f02c26d39f318e77b1519aae::1730827175::res://.godot/exported/133200997/export-cd9681f88c0fac02b281a037ca3c9cd2-terrain.scn
+res://world/world.tscn::96144aa8812d71d0901caa9e1e187aba::1730950977::res://.godot/exported/133200997/export-47749b605ed9c7a5a39a491f936b1e42-world.scn
