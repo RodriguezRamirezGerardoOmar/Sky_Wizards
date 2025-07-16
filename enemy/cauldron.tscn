@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn5j8x75asw26"]
+
+[ext_resource type="PackedScene" uid="uid://bsgmomdfvr8rk" path="res://models/cauldron.glb" id="1_cs5r6"]
+
+[node name="cauldron" instance=ExtResource("1_cs5r6")]

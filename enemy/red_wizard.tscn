@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx2hibklblt2s"]
+
+[ext_resource type="PackedScene" uid="uid://2vpmt15hk21r" path="res://models/red_wizard.glb" id="1_bc5cx"]
+
+[node name="red_wizard" instance=ExtResource("1_bc5cx")]
+
+[node name="Skeleton3D" parent="Armature" index="1"]
+bones/0/position = Vector3(-1.59172e-08, -0.298111, -0.242391)
+bones/1/rotation = Quaternion(0.134873, -0.0656167, -0.871536, 0.466829)
+bones/2/rotation = Quaternion(0.630627, -0.00799997, -0.00652814, 0.776017)
+bones/3/rotation = Quaternion(0.208337, 0.0100813, -0.00215943, 0.978003)
+bones/5/rotation = Quaternion(0.253096, 0.290455, 0.819927, 0.423436)
+bones/6/rotation = Quaternion(0.557134, 0.00855988, 0.00576317, 0.830359)
+bones/8/position = Vector3(0.0716172, -0.351521, -0.242391)
+bones/8/rotation = Quaternion(0.516116, 0.47427, 0.519849, 0.488313)
+bones/9/rotation = Quaternion(0.00817293, 0.00680905, 0.820381, 0.571719)
+bones/11/position = Vector3(0.071617, -0.714068, -0.0350447)
+bones/12/position = Vector3(0.27172, -0.00749478, 0.174349)
+bones/12/rotation = Quaternion(-0.5, 0.5, 0.5, -0.5)
+bones/13/position = Vector3(0.401299, 0.170289, -1.06923)
+bones/14/position = Vector3(0.071617, -0.375494, 0.475827)
+bones/15/position = Vector3(-0.0716173, -0.351521, -0.242391)
+bones/15/rotation = Quaternion(0.516116, -0.47427, -0.519849, 0.488313)
+bones/16/rotation = Quaternion(0.00817293, -0.00680905, -0.820381, 0.571719)
+bones/18/position = Vector3(-0.071617, -0.714068, -0.0350447)
+bones/19/position = Vector3(-0.16381, 0.059392, 0.203601)
+bones/20/position = Vector3(-0.401299, 0.170289, -1.06923)
+bones/21/position = Vector3(-0.071617, -0.375494, 0.475827)
+bones/21/rotation = Quaternion(-0.00772338, 0.707065, 0.707065, -0.00772338)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "default"

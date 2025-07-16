@@ -1,0 +1,14 @@
+Label
+ColorRect
+ResourcePreloader
+AudioStreamPlayer
+Node
+GPUParticles3D
+CPUParticles3D
+OmniLight3D
+Node3D
+SpringArm3D
+Timer
+RigidBody3D
+AudioStreamPlayer3D
+CollisionShape3D

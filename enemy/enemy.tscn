@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccc2yf8kjyi1v"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_ppra6"]
+[ext_resource type="PackedScene" uid="uid://dn5j8x75asw26" path="res://enemy/cauldron.tscn" id="2_p200p"]
+[ext_resource type="PackedScene" uid="uid://bx2hibklblt2s" path="res://enemy/red_wizard.tscn" id="3_pmsee"]
+[ext_resource type="AudioStream" uid="uid://dc2o6gi0ctoqb" path="res://sounds/TIE Fighter roar.mp3" id="4_p200p"]
+[ext_resource type="AudioStream" uid="uid://biqs1rjuetxbd" path="res://sounds/blaster.mp3" id="5_pmsee"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pmsee"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1wwld"]
+radius = 0.628629
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y5vj3"]
+
+[node name="enemy" type="CharacterBody3D"]
+motion_mode = 1
+script = ExtResource("1_ppra6")
+metadata/Type = "Enemy"
+
+[node name="cauldron" parent="." instance=ExtResource("2_p200p")]
+
+[node name="red_wizard" parent="cauldron" instance=ExtResource("3_pmsee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.442639, 0)
+
+[node name="missile_area" type="Area3D" parent="cauldron/red_wizard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="lock_volume" type="CollisionShape3D" parent="cauldron/red_wizard/missile_area"]
+transform = Transform3D(300, 0, 0, 0, -1.31134e-05, -300, 0, 300, -1.31134e-05, 0, 0, 0)
+shape = SubResource("SphereShape3D_pmsee")
+
+[node name="hitbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.185035, 0)
+shape = SubResource("SphereShape3D_1wwld")
+
+[node name="vision_area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[node name="vision_cube" type="CollisionShape3D" parent="vision_area"]
+transform = Transform3D(3.42659, 0, 0, 0, 3.42659, 0, 0, 0, 3.42659, 0, 0.182931, 1.71243)
+shape = SubResource("BoxShape3D_y5vj3")
+
+[node name="despawn_timer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[node name="flyby_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_p200p")
+volume_db = -10.0
+
+[node name="fire_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="fire_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_pmsee")
+volume_db = -15.0
+
+[node name="enemy_marker" type="Node" parent="."]
+
+[connection signal="body_entered" from="cauldron/red_wizard/missile_area" to="." method="_on_missile_area_body_entered"]
+[connection signal="body_exited" from="cauldron/red_wizard/missile_area" to="." method="_on_missile_area_body_exited"]
+[connection signal="timeout" from="despawn_timer" to="." method="_on_despawn_timer_timeout"]
+[connection signal="timeout" from="fire_timer" to="." method="_on_fire_timer_timeout"]

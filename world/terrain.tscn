@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://t11f7tw5an8y"]
+
+[ext_resource type="PackedScene" uid="uid://c814u4kcgw3y0" path="res://models/terrain.glb" id="1_8r1dp"]
+[ext_resource type="Shader" path="res://shaders/ground.gdshader" id="2_pjce0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_csr0e"]
+render_priority = 0
+shader = ExtResource("2_pjce0")
+
+[node name="terrain" instance=ExtResource("1_8r1dp")]
+
+[node name="Fort Eissen" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_csr0e")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=11 format=3 uid="uid://ush8u4mowvft"]
+
+[ext_resource type="Script" path="res://world/world.gd" id="1_mmdvd"]
+[ext_resource type="Texture2D" uid="uid://b6idvf2f67urw" path="res://textures/kloppenheim_02_puresky_2k.exr" id="1_tcf2h"]
+[ext_resource type="PackedScene" uid="uid://tc0fxfstldtg" path="res://player/playerCharacter.tscn" id="2_4717r"]
+[ext_resource type="PackedScene" uid="uid://bsqunli8dv1du" path="res://world/arena.tscn" id="2_h5o24"]
+[ext_resource type="Script" path="res://world/kill_barrier.gd" id="3_h5o24"]
+[ext_resource type="PackedScene" uid="uid://ccc2yf8kjyi1v" path="res://enemy/enemy.tscn" id="5_fn3g3"]
+[ext_resource type="PackedScene" uid="uid://bescy3qs30fci" path="res://enemy/spawner.tscn" id="6_fn3g3"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h5o24"]
+panorama = ExtResource("1_tcf2h")
+
+[sub_resource type="Sky" id="Sky_mmdvd"]
+sky_material = SubResource("PanoramaSkyMaterial_h5o24")
+
+[sub_resource type="Environment" id="Environment_fn3g3"]
+background_mode = 2
+sky = SubResource("Sky_mmdvd")
+volumetric_fog_length = 5.0
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_mmdvd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fn3g3")
+
+[node name="ground" parent="WorldEnvironment" instance=ExtResource("2_h5o24")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("3_h5o24")
+metadata/Type = "Map"
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_4717r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.535205, 11.9707, -219.887)
+
+[node name="spawner" parent="." instance=ExtResource("6_fn3g3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0)
+enemy = ExtResource("5_fn3g3")
+
+[connection signal="player_crashed" from="PlayerCharacter" to="WorldEnvironment/ground" method="_on_player_character_player_crashed"]
+[connection signal="player_dead" from="PlayerCharacter" to="spawner" method="_on_player_character_player_dead"]
